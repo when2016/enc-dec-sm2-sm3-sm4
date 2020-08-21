@@ -71,6 +71,7 @@ public class RsaUtil {
         } catch (Exception e) {
             //输出到日志文件中
             log.error("Rsa初始化失败!");
+            log.error(ErrorUtil.errorInfoToString(e));
         }
     }
 
@@ -186,8 +187,4 @@ public class RsaUtil {
         out.close();
         return out.toByteArray();
     }
-
-
-
-
 }

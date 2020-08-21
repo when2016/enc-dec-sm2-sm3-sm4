@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *  AES + RSA 加解密环绕处理
+ * AES + RSA 加解密环绕处理
  *
  * @param:
  * @return:
@@ -114,7 +114,7 @@ public class SafetyAspect {
                 log.info("解密出来的data数据：" + decrypt);
 
                 if (args.length > 0) {
-                    args[0] = JSONObject.parseObject(decrypt,args[0].getClass());
+                    args[0] = JSONObject.parseObject(decrypt, args[0].getClass());
                 }
             }
 
@@ -132,7 +132,7 @@ public class SafetyAspect {
                 log.info("AES的key：" + key);
                 log.info("需要加密的data数据：" + obj);
                 String data = AesUtil.encrypt(JSONObject.toJSONString(responseVO.getBody()), key);
-                AesUtil.decrypt(data,key);
+                AesUtil.decrypt(data, key);
                 //用前端的公钥来解密AES的key，并转成Base64
                 String aesKey = Base64.encodeBase64String(RsaUtil.encryptByPublicKey(key.getBytes(), publicKey));
 

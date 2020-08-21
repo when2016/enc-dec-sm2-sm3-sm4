@@ -1,0 +1,14 @@
+# Default ignored files
+.idea/
+**/target/*
+**/*.iml
+*.iml
+build/
+out/
+.gradle/
+.DS_Store
+target/
+.idea/
+dist
+gradle/
+/.project
