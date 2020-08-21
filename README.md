@@ -190,3 +190,9 @@ public class SafetyAspect {
 
 2.两端的秘钥不能被第三方获取，服务端的秘钥存储在服务器配置文件上，小程序端的秘钥也是存储在支付宝/微信端小程序服务器中。咨询过支付宝客服，他们说正常情况下小程序代码不会被第三方获取（只能信任于他们了。。。）
 
+3.参考文章
+ * https://github.com/leeyiyu/EncryptionAndDecryption
+ * https://blog.csdn.net/liyiyu123/article/details/108023058
+ * https://blog.csdn.net/weixin_34009794/article/details/88023046
+
+
