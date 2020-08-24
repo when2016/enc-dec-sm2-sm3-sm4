@@ -194,5 +194,6 @@ public class SafetyAspect {
  * https://github.com/leeyiyu/EncryptionAndDecryption
  * https://blog.csdn.net/liyiyu123/article/details/108023058
  * https://blog.csdn.net/weixin_34009794/article/details/88023046
+ * https://www.jianshu.com/p/c7ea4d1a8b3b?from=singlemessage
 
 
