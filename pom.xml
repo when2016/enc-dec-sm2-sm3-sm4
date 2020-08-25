@@ -104,6 +104,11 @@
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.65.01</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.4.0</version>
+        </dependency>
 
 
     </dependencies>
