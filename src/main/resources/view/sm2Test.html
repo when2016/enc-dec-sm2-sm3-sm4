@@ -8,26 +8,26 @@
 		<!--
 			sm3最少依赖包
         -->
-        <script src="js/utils/hex.js"></script>
-		<script src="js/utils/byteUtil.js"></script> 
-		<script src="js/crypto/sm3-1.0.js"></script>
+        <script src="view/js/utils/hex.js"></script>
+		<script src="view/js/utils/byteUtil.js"></script>
+		<script src="view/js/crypto/sm3-1.0.js"></script>
 		
 
 		<!--
 			这部分包+sm3最少依赖包=sm2需要包
 		-->
-		<script src="js/ext/jsbn.js"></script>
-		<script src="js/ext/jsbn2.js"></script>
-		<script src="js/ext/ec.js"></script>
-		<script src="js/ext/ec-patch.js"></script>
-		<script src="js/ext/prng4.js"></script>
-		<script src="js/ext/rng.js"></script>
-		<script src="js/crypto/sm2-1.0.js"></script>
+		<script src="view/js/ext/jsbn.js"></script>
+		<script src="view/js/ext/jsbn2.js"></script>
+		<script src="view/js/ext/ec.js"></script>
+		<script src="view/js/ext/ec-patch.js"></script>
+		<script src="view/js/ext/prng4.js"></script>
+		<script src="view/js/ext/rng.js"></script>
+		<script src="view/js/crypto/sm2-1.0.js"></script>
         
         <!--
         	不必要的js
         -->
-        <script src="js/utils/jquery-3.3.1.min.js"></script>
+        <script src="view/js/utils/jquery-3.3.1.min.js"></script>
         
         <style> 
 		body{ text-align:center} 
@@ -128,6 +128,7 @@
 			$("#btn_genkey").click(function(){
 				var sm2 = new SM2();
 				var keyPair = sm2.generateKeyPairHex();//得到的keypair结构：{'privkeyhex': hPrv, 'pubkeyhex': hPub}
+				console.log(keyPair);
 				$("#pubkey").val(keyPair['pubkeyhex'].toUpperCase());
 				$("#privkey").val(keyPair['privkeyhex'].toUpperCase());
 			});

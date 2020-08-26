@@ -41,4 +41,23 @@ class IndexController {
         return modelAndView;
     }
 
+    @GetMapping("sm2Test")
+    public ModelAndView sm2Test() {
+        ModelAndView modelAndView = new ModelAndView("sm2Test");
+        return modelAndView;
+    }
+
+    @GetMapping("sm3Test")
+    public ModelAndView sm3Test() {
+        ModelAndView modelAndView = new ModelAndView("sm3Test");
+        return modelAndView;
+    }
+
+    @GetMapping("sm4Test")
+    public ModelAndView sm4Test() {
+        ModelAndView modelAndView = new ModelAndView("sm4Test");
+        return modelAndView;
+    }
+
+
 }
