@@ -16,8 +16,9 @@ public class TestMain {
     public static void main(String[] args) {
         //sm2_01();
         //sm2_02();
+        sm2_03();
         //sm4();
-        sm4_02();
+        //sm4_02();
     }
 
     //使用随机生成的密钥对加密或解密
