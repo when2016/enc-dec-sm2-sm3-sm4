@@ -92,7 +92,7 @@ function subimt() {
     var aesKey = aesUtil.genKey();
     data = aesUtil.encrypt(data, aesKey);
     //前端RSA公钥
-    var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCE66++2AZIZhbvwWcN+YqpNb8vX6R+hp9HiM/jwJjYGIC0tQbuWdeeh4FUHhKly65bxK0ysASzH2rvuRnWURPXc9rCZqTbD7gPYWK/FaTjRtNku0Xlg4BeWvOsoIGNkWKZxrOH7fKcaG4FZtvekDyVINOM67h1yAM1vX6/cnn7swIDAQAB";
+    var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQClfBRu1Yuv1+Hqsj4OA0w0Rr2Zyv5udaj+tuih5bQg5lv6l7wa/usjDA591zE5wL4Rgb6i82VHiGxe28U8de1ghw2QkXqvM+ap0ajSesDzNQd22iIuMYClcEcMjLG/0Iajb+C2KoN08Nn3DfCSS8zNhD6+Uvd0qvJHW5TW7IC40QIDAQAB";
     aesKey = rsaUtil.encrypt(aesKey, publicKey);
     //发送请求之前随机获取AES的key
     data = {

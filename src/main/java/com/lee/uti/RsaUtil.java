@@ -187,4 +187,10 @@ public class RsaUtil {
         out.close();
         return out.toByteArray();
     }
+
+
+    public static void main(String[] args) {
+        System.out.println(getPrivateKey());
+        System.out.println(getPublicKey());
+    }
 }
