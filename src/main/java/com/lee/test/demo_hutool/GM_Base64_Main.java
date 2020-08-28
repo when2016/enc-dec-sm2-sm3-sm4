@@ -1,32 +1,30 @@
 package com.lee.test.demo_hutool;
 
-import cn.hutool.core.util.HexUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
 import com.lee.uti.HexConvertUtil;
-import org.apache.commons.codec.binary.Base64;
 
 import java.security.KeyPair;
 
-public class GM_JS_Main {
+public class GM_Base64_Main {
 
     private static final String publicKey = "MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE+EvvOpraAZ/cNGNdKskIVypt4dSt5j6dG+1JLC+SQBv8ZUP3yF9nANmpc00wNE5tdVcP1fwr4+UKpr/M7J/Vcg==";
     private static final String privateKey = "MIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQgaffye0uSzuhFIe3VXVq/xSJFad4RqVJLJ9jdcH/3HN2gCgYIKoEcz1UBgi2hRANCAAT4S+86mtoBn9w0Y10qyQhXKm3h1K3mPp0b7UksL5JAG/xlQ/fIX2cA2alzTTA0Tm11Vw/V/Cvj5Qqmv8zsn9Vy";
 
     public static void main(String[] args) {
         String text = "我是一段测试aaaa王红恩";
-        sm2_02(text);
+        sm2_03(text);
 
     }
 
     //非对称加密（RSA）使用自定义密钥对加密或解密
     private static void sm2_02(String text) {
 
-        System.out.println("publicKey===="+publicKey);
-        System.out.println("privateKey===="+privateKey);
+        System.out.println("publicKey====" + publicKey);
+        System.out.println("privateKey====" + privateKey);
         System.out.println("text==" + text);
         SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
         // 公钥加密，私钥解密
@@ -50,6 +48,7 @@ public class GM_JS_Main {
         System.out.println("pubKey16===" + pubKey16.toUpperCase());
 
 
+
         SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
 
         // 公钥加密，私钥解密
@@ -58,8 +57,6 @@ public class GM_JS_Main {
         System.out.println("encryptStr==" + encryptStr);
         System.out.println("decryptStr==" + decryptStr);
     }
-
-
 
 
 }

@@ -15,6 +15,7 @@ import java.security.KeyPair;
 
 //java tool hutool.jar
 public class TestMain {
+
     public static void main(String[] args) {
         //sm2_01();
         //sm2_02();
@@ -66,6 +67,11 @@ public class TestMain {
         KeyPair pair = SecureUtil.generateKeyPair("SM2");
         byte[] privateKey = pair.getPrivate().getEncoded();
         byte[] publicKey = pair.getPublic().getEncoded();
+
+        String base64_priKey=Base64.encodeBase64String(privateKey);
+        String base64_pubKey=Base64.encodeBase64String(publicKey);
+        System.out.println("base64_priKey===="+base64_priKey);
+        System.out.println("base64_pubKey===="+base64_pubKey);
 
         SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
         // 公钥加密，私钥解密
