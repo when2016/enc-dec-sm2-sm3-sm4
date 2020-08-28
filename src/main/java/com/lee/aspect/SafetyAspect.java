@@ -107,6 +107,7 @@ public class SafetyAspect {
 
                 //RSA解密出来字符串多一对双引号d
                 aesKey = aesKey.substring(1, aesKey.length() - 1);
+                log.info("解密出来的AES的(RSA解密出来字符串多一对双引号)key：" + aesKey);
 
                 //AES解密得到明文data数据
                 String decrypt = AesUtil.decrypt(data, aesKey);

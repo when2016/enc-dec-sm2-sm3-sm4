@@ -1,4 +1,4 @@
-package com.lee.test;
+package com.lee.test.demo_hutool;
 
 import cn.hutool.core.util.HexUtil;
 import cn.hutool.core.util.StrUtil;
@@ -16,9 +16,17 @@ public class GM_JS_Main {
     private static final String publicKey = "MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE+EvvOpraAZ/cNGNdKskIVypt4dSt5j6dG+1JLC+SQBv8ZUP3yF9nANmpc00wNE5tdVcP1fwr4+UKpr/M7J/Vcg==";
     private static final String privateKey = "MIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQgaffye0uSzuhFIe3VXVq/xSJFad4RqVJLJ9jdcH/3HN2gCgYIKoEcz1UBgi2hRANCAAT4S+86mtoBn9w0Y10qyQhXKm3h1K3mPp0b7UksL5JAG/xlQ/fIX2cA2alzTTA0Tm11Vw/V/Cvj5Qqmv8zsn9Vy";
 
-    //使用自定义密钥对加密或解密
+    public static void main(String[] args) {
+        String text = "我是一段测试aaaa王红恩";
+        sm2_02(text);
+
+    }
+
+    //非对称加密（RSA）使用自定义密钥对加密或解密
     private static void sm2_02(String text) {
 
+        System.out.println("publicKey===="+publicKey);
+        System.out.println("privateKey===="+privateKey);
         System.out.println("text==" + text);
         SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
         // 公钥加密，私钥解密
@@ -28,7 +36,7 @@ public class GM_JS_Main {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    //使用自定义密钥对加密或解密
+    //非对称加密（RSA）使用自定义密钥对加密或解密
     private static void sm2_03(String text) {
         System.out.println("text==" + text);
 
@@ -51,11 +59,7 @@ public class GM_JS_Main {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    public static void main(String[] args) {
-        String text = "我是一段测试aaaa王红恩";
-        sm2_03(text);
 
-    }
 
 
 }

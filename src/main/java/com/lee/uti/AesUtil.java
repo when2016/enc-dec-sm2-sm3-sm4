@@ -2,6 +2,7 @@ package com.lee.uti;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import sun.security.krb5.internal.crypto.Aes128;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -108,6 +109,28 @@ public class AesUtil {
 
         //调用doFinal解密
         return new String(cipher.doFinal(decodeBase64));
+    }
+
+
+    public static void main(String[] args) throws Exception {
+
+
+        //String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCWKgzE53nM1ermqYgDD9T/KsKJuDH/xwJnL2mbSXQKRTBFLUeMjTbL5EAbqP1O8V9z8QYgYKjvMQhgOZNDGe0IjE3+Hy0hy7Fch5YELI+SlDMO0iBH8J9ndpCYvMD+4+aG5Fvra99MRwqYW6CZmQpUSIYRj4Flue7w9jf5fq5kFwIDAQAB";
+        //String key = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJYqDMTneczV6uapiAMP1P8qwom4Mf/HAmcvaZtJdApFMEUtR4yNNsvkQBuo/U7xX3PxBiBgqO8xCGA5k0MZ7QiMTf4fLSHLsVyHlgQsj5KUMw7SIEfwn2d2kJi8wP7j5obkW+tr30xHCphboJmZClRIhhGPgWW57vD2N/l+rmQXAgMBAAECgYBudoxiJK1yw0JDYB7PscvL0Va+HKObNnhME5KqSwRzsaXqnX5upErU/hkyv8NnWSQQlBMfqjtbiURSFMiBqga1DI3lw7uggGCE+PlvLRqWDjxHRsobLq0152ChYHpOF0vCv9xnSlTnu2qQ/qmtEB4mOCay86yyJsFCqDwnnGmGAQJBAMe776kXF5OMWyhTIP+Q7XjW3ycZ03Aus1dxnRtnVHkgSgvprbx6bVUJEUJaZ17fRmU7bqu1/Yq4CSIba5A14IECQQDAd1Lg6v63tYHeX1EftcjBKTOBxN1naAYYheY5hKnzsNktSPGIzJZi6xs2USA3aT6PA+6GYZEji8ZVymBIaviXAkB4KO02majaYE8bBF/OwF7NGt+nQ1c7nyzPh49PxCtCr5U8c3nM8Q5DYTAb7g1QOxy7nDSpYtRElxEPjtV4LaGBAkB2Y6/WbJbceEj3eZhUMiTYNLjbNTaf2gwN36ebb/B+1yTwRzNT280R8d7eTY7Mpu91V4zMmo2F2P/aW89YHHznAkEAhy3+a2Lu9F/a0I5DhitkZXSCiwhjNfR3+/vwLEiP5ti7Ya/CLxqZONbH6Y0t6xUiXpKc+6i4xXkqBgsdemPSRw==";
+
+
+        String data = "中国";
+        String key = AesUtil.getKey();
+        System.out.println("---加密");
+        System.out.println("encKey=="+key);
+        String encData = AesUtil.encrypt(data,key);
+        System.out.println("encData="+encData);
+
+        System.out.println("---解密-------");
+        String decData = AesUtil.decrypt(encData,key);
+        System.out.println("decData=="+decData);
+
+
     }
 
 }

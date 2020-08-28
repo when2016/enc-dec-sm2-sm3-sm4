@@ -1,4 +1,4 @@
-package com.lee.test;
+package com.lee.test.demo_hutool;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.core.util.StrUtil;
@@ -12,6 +12,8 @@ import org.apache.commons.codec.binary.Base64;
 
 import java.security.KeyPair;
 
+
+//java tool hutool.jar
 public class TestMain {
     public static void main(String[] args) {
         //sm2_01();
@@ -21,7 +23,7 @@ public class TestMain {
         //sm4_02();
     }
 
-    //使用随机生成的密钥对加密或解密
+    //非对称加密（RSA）使用随机生成的密钥对加密或解密
     private static void sm2_01() {
 
         String text = "我是一段测试aaaa";
@@ -34,7 +36,7 @@ public class TestMain {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    //使用自定义密钥对加密或解密
+    //非对称加密（RSA）使用自定义密钥对加密或解密
     private static void sm2_02() {
 
         String text = "我是一段测试aaaa王红恩";
@@ -55,7 +57,7 @@ public class TestMain {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    //使用自定义密钥对加密或解密
+    //非对称加密（RSA）使用自定义密钥对加密或解密
     private static void sm2_03() {
 
         String text = "我是一段测试aaaa";
@@ -73,7 +75,7 @@ public class TestMain {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    //对称加密SM4
+    //对称加密（AES）对称加密SM4
     private static void sm4_02() {
 
         String content = "test中文fffffffffffff中国人民解放军";
@@ -94,7 +96,7 @@ public class TestMain {
         System.out.println("decryptStr==" + decryptStr);
     }
 
-    //对称加密SM4
+    //对称加密（AES）对称加密SM4
     private static void sm4() {
         String content = "test中文";
 
